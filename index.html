@@ -1,35 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My YouTube Clone</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>選択肢結合アプリ</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">MyYouTube</div>
-        <input type="text" placeholder="Search">
-        <button>Search</button>
-    </header>
-    <div class="container">
-        <nav class="sidebar">
-            <ul>
-                <li>Home</li>
-                <li>Trending</li>
-                <li>Subscriptions</li>
-                <li>Library</li>
-            </ul>
-        </nav>
-        <main class="content">
-            <div class="video">
-                <img src="images/thumbnail.jpg" alt="Video Thumbnail">
-                <h3>Video Title</h3>
-                <p>Video Description</p>
-            </div>
-            <!-- 他のビデオカードも同様に追加 -->
-        </main>
+    <div id="page1" class="page active">
+        <button onclick="nextPage('page2', '男')">男</button>
+        <button onclick="nextPage('page2', '女')">女</button>
     </div>
-    <script src="js/scripts.js"></script>
+    <div id="page2" class="page">
+        <button onclick="nextPage('page3', 'は')">は</button>
+        <button onclick="nextPage('page3', 'が')">が</button>
+    </div>
+    <div id="page3" class="page">
+        <button onclick="nextPage('page4', '料理')">料理</button>
+        <button onclick="nextPage('page4', '掃除')">掃除</button>
+    </div>
+    <div id="page4" class="page">
+        <button onclick="nextPage('result', 'をした')">をした</button>
+        <button onclick="nextPage('result', 'をしてもらった')">をしてもらった</button>
+    </div>
+    <div id="result" class="page">
+        <p id="output"></p>
+    </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
